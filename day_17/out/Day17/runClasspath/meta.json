@@ -1,0 +1,9 @@
+{
+    "value": [
+        "ref:c984eca8:/home/tm/Documents/advent_code/day_17/Day17/resources",
+        "ref:5be58994:/home/tm/Documents/advent_code/day_17/out/Day17/compile/dest/classes",
+        "qref:2330b29e:/home/tm/.cache/coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.3/scala-library-2.13.3.jar"
+    ],
+    "valueHash": -1843290592,
+    "inputsHash": 1212268781
+}

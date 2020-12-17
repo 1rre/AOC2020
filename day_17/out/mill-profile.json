@@ -1,0 +1,182 @@
+[
+    {
+        "label": "Day17.mainClass",
+        "millis": 1,
+        "cached": true
+    },
+    {
+        "label": "mill.scalalib.ZincWorkerModule.compilerInterfaceClasspath",
+        "millis": 0,
+        "cached": true
+    },
+    {
+        "label": "mill.scalalib.ZincWorkerModule.classpath",
+        "millis": 2,
+        "cached": true
+    },
+    {
+        "label": "mill.scalalib.ZincWorkerModule.worker",
+        "millis": 0,
+        "cached": true
+    },
+    {
+        "label": "Day17.upstreamCompileOutput",
+        "millis": 1,
+        "cached": true
+    },
+    {
+        "label": "Day17.sources",
+        "millis": 2,
+        "cached": false
+    },
+    {
+        "label": "Day17.generatedSources",
+        "millis": 1,
+        "cached": true
+    },
+    {
+        "label": "Day17.allSources",
+        "millis": 1,
+        "cached": true
+    },
+    {
+        "label": "Day17.allSourceFiles",
+        "millis": 0,
+        "cached": true
+    },
+    {
+        "label": "Day17.transitiveLocalClasspath",
+        "millis": 1,
+        "cached": true
+    },
+    {
+        "label": "Day17.resources",
+        "millis": 2,
+        "cached": false
+    },
+    {
+        "label": "Day17.unmanagedClasspath",
+        "millis": 1,
+        "cached": true
+    },
+    {
+        "label": "Day17.scalaVersion",
+        "millis": 0,
+        "cached": true
+    },
+    {
+        "label": "Day17.platformSuffix",
+        "millis": 0,
+        "cached": true
+    },
+    {
+        "label": "Day17.compileIvyDeps",
+        "millis": 0,
+        "cached": true
+    },
+    {
+        "label": "Day17.scalaOrganization",
+        "millis": 0,
+        "cached": true
+    },
+    {
+        "label": "Day17.scalaLibraryIvyDeps",
+        "millis": 1,
+        "cached": true
+    },
+    {
+        "label": "Day17.ivyDeps",
+        "millis": 1,
+        "cached": true
+    },
+    {
+        "label": "Day17.transitiveIvyDeps",
+        "millis": 0,
+        "cached": true
+    },
+    {
+        "label": "Day17.compileClasspath",
+        "millis": 1,
+        "cached": true
+    },
+    {
+        "label": "Day17.javacOptions",
+        "millis": 0,
+        "cached": true
+    },
+    {
+        "label": "Day17.scalacOptions",
+        "millis": 0,
+        "cached": true
+    },
+    {
+        "label": "Day17.scalaCompilerClasspath",
+        "millis": 0,
+        "cached": true
+    },
+    {
+        "label": "Day17.scalacPluginIvyDeps",
+        "millis": 1,
+        "cached": true
+    },
+    {
+        "label": "Day17.scalacPluginClasspath",
+        "millis": 0,
+        "cached": true
+    },
+    {
+        "label": "Day17.compile",
+        "millis": 1,
+        "cached": true
+    },
+    {
+        "label": "Day17.finalMainClassOpt",
+        "millis": 1,
+        "cached": true
+    },
+    {
+        "label": "Day17.finalMainClass",
+        "millis": 1,
+        "cached": true
+    },
+    {
+        "label": "Day17.localClasspath",
+        "millis": 0,
+        "cached": true
+    },
+    {
+        "label": "Day17.runIvyDeps",
+        "millis": 0,
+        "cached": true
+    },
+    {
+        "label": "Day17.upstreamAssemblyClasspath",
+        "millis": 1,
+        "cached": true
+    },
+    {
+        "label": "Day17.runClasspath",
+        "millis": 0,
+        "cached": true
+    },
+    {
+        "label": "Day17.forkArgs",
+        "millis": 0,
+        "cached": true
+    },
+    {
+        "label": "Day17.forkEnv",
+        "millis": 1,
+        "cached": true
+    },
+    {
+        "label": "Day17.forkWorkingDir",
+        "millis": 1,
+        "cached": true
+    },
+    {
+        "label": "Day17.run",
+        "millis": 972,
+        "cached": false
+    }
+]

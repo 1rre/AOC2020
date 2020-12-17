@@ -23,27 +23,23 @@ object Main extends App {
   }
 
   def expandCube(cube: Array[Array[Array[Array[Boolean]]]]) = {
-    Array.tabulate(cube.length + 2)(i => 
-      Array.tabulate(cube(0).length + 2)(j => 
-        Array.tabulate(cube(0)(0).length + 2)(k => 
-          Array.tabulate(cube(0)(0)(0).length + 2)(l => {
-            val neighbours = {
-              (math.max(i-2, 0) to math.min(i, cube.length - 1)).map(a => 
-                (math.max(j-2, 0) to math.min(j, cube(0).length - 1)).map(b => 
-                  (math.max(k-2, 0) to math.min(k, cube(0)(0).length - 1)).map(c => 
-                    (math.max(l-2, 0) to math.min(l, cube(0)(0)(0).length - 1)).count(d => {
-                      (a,b,c,d) != (i-1,j-1,k-1,l-1) && cube(a)(b)(c)(d)
-                    })
-                  ).sum
-                ).sum
-              ).sum
-            }
-            (util.Try(!cube(i-1)(j-1)(k-1)(l-1))).getOrElse(true) && neighbours == 3 ||
-            util.Try(cube(i-1)(j-1)(k-1)(l-1)).getOrElse(false) && (2 to 3).contains(neighbours)
-
-          })
-        )
-      )
-    )
+    Array.tabulate(
+      cube.length + 2,
+      cube(0).length + 2,
+      cube(0)(0).length + 2,
+      cube(0)(0)(0).length + 2
+    )((i,j,k,l) => {
+      val neighbours = (math.max(i-2, 0) to math.min(i, cube.length - 1)).map(a => 
+        (math.max(j-2, 0) to math.min(j, cube(0).length - 1)).map(b => 
+          (math.max(k-2, 0) to math.min(k, cube(0)(0).length - 1)).map(c => 
+            (math.max(l-2, 0) to math.min(l, cube(0)(0)(0).length - 1)).count(d => 
+              (a,b,c,d) != (i-1,j-1,k-1,l-1) && cube(a)(b)(c)(d)
+            )
+          ).sum
+        ).sum
+      ).sum
+      val active = util.Try(cube(i-1)(j-1)(k-1)(l-1)).getOrElse(false)
+      !active && neighbours == 3 || active && (2 to 3).contains(neighbours)
+    })
   }
 }

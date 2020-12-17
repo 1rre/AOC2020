@@ -11,8 +11,10 @@ object Input {
           conditionNames += condition.takeWhile(_ != ':')
           conditions += extractCondition(condition)
         }
-        case ticket if myTicket == null && """(\d,?)+""".r.matches(ticket) => myTicket = ticket.split(",").map(_.toInt)
-        case ticket if """(\d,?)+""".r.matches(ticket) => tickets += ticket.split(",").map(_.toInt)
+        case ticket if myTicket == null && """(\d,?)+""".r.matches(ticket) =>
+          myTicket = ticket.split(",").map(_.toInt)
+        case ticket if """(\d,?)+""".r.matches(ticket) =>
+          tickets += ticket.split(",").map(_.toInt)
         case _ =>
       }
     }

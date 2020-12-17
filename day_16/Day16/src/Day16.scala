@@ -17,8 +17,16 @@ object Day16 extends App {
   val reducedConditions = collection.mutable.HashMap[Int,Int]()
   validConditions.indices.foldLeft(validConditions)((acc, v) => {
     reducedConditions += ((acc.head._1(0), acc.head._2))
-    acc.tail.map(x => (x._1.filterNot(_ == acc.head._1(0)), x._2))
+    acc.tail.map(x =>
+      (x._1.filterNot(_ == acc.head._1(0)), x._2)
+    )
   })
-  val p2 = conditions.indices.filter(i => """departure.*""".r.matches(conditionNames(i))).map(i => myTicket(reducedConditions(i)).toLong).reduce((acc, v) => acc * v)
+  val p2 = conditions.indices.filter(i =>
+      """departure.*""".r.matches(conditionNames(i))
+    ).map(i =>
+      myTicket(reducedConditions(i)).toLong
+    ).reduce((acc, v) =>
+      acc * v
+    )
   println(s"Part 2: ${p2}")
 }

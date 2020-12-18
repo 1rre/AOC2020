@@ -1,24 +1,50 @@
-x = File.read!("day_1")
-|> String.trim
-|> String.split("\n")
-|> Enum.map(&String.to_integer/1)
+defmodule Day1 do
 
-Enum.reduce_while(x, tl(x), fn a, acc ->
-  Enum.reduce_while(acc, tl(acc), fn b, acc ->
-    Enum.find(acc, fn c -> a + b + c == 2020 end)
-    |> case do
-      nil when length(acc) > 0 -> {:cont, tl(acc)}
-      nil -> {:halt, nil}
-      c ->
-        IO.puts("b: #{b}, c: #{c}")
-        {:halt, b * c}
-    end
-  end)
-  |> case do
-    b when is_integer(b) ->
-      IO.puts("a: #{a}")
-      {:halt, a * b}
-    _ -> {:cont, tl(acc)}
+  def get_input do
+    File.read!("input")
+    |> String.split("\n")
+    |> Enum.map(&String.to_integer/1)
   end
-end)
-|> IO.puts()
+
+  def part(1) do
+
+    input = get_input()
+
+    Enum.reduce_while(input, input, fn x, acc ->
+      case Enum.find(acc, & x + &1 == 2020) do
+        nil -> {:cont, tl(acc)}
+        y   -> {:halt, x * y}
+      end
+    end)
+
+  end
+
+  def part(2) do
+
+    input = get_input()
+
+    Enum.reduce_while(input, tl(input), fn x, acc ->
+      Enum.reduce_while(acc, tl(acc), fn y, acc ->
+        case Enum.find(acc, & x + y + &1 == 2020) do
+          nil when acc == [] -> {:halt, nil}
+          nil                -> {:cont, tl(acc)}
+          z                  -> {:halt, x * y * z}
+        end
+      end)
+      |> case do
+        nil -> {:cont, tl(acc)}
+        n   -> {:halt, n}
+      end
+    end)
+
+  end
+
+end
+
+
+case Enum.at(System.argv, 0) do
+  "1" -> Day1.part(1)
+  "2" -> Day1.part(2)
+  _   -> raise "No args given"
+end
+|> IO.puts

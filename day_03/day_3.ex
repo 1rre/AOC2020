@@ -1,28 +1,41 @@
 defmodule Day3 do
-  def read do
-    File.read!("day_3")
-    |> String.trim
+  def get_input do
+    File.read!("input")
     |> String.split("\n")
+    |> Enum.map(&to_charlist/1)
   end
-  def go(l, a, b, i, j) do
-    IO.puts("a: #{a}, b: #{b}")
-    IO.puts(Enum.at(l, a))
-    case Enum.at(l, a) do
-      nil -> 0
-      x -> case String.at(x, b) do
-        "#" -> 1 + go(l, a + i, rem(b + j, String.length(x)), i, j)
-        nil -> 0
-        _ -> 0 + go(l, a + i, rem(b + j, String.length(x)), i, j)
-      end
+
+  def run(list, _, y, _, _) when y >= length(list), do: 0
+  def run(list, x, y, a, b) do
+    Enum.at(list, y)
+    |> Enum.at(x)
+    |> case do
+      ?# -> run(list, rem(x + a, length(hd(list))), y + b, a, b) + 1
+      _  -> run(list, rem(x + a, length(hd(list))), y + b, a, b)
     end
   end
+
+  def part(1) do
+    input = get_input()
+    run(input, 0, 0, 3, 1)
+  end
+
+  def part(2) do
+    input = get_input()
+
+    run(input, 0, 0, 1, 1) *
+    run(input, 0, 0, 3, 1) *
+    run(input, 0, 0, 5, 1) *
+    run(input, 0, 0, 7, 1) *
+    run(input, 0, 0, 1, 2)
+  end
+
 end
 
-r = Day3.read
 
-Day3.go(r,1,1,1,1) *
-Day3.go(r,1,3,1,3) *
-Day3.go(r,1,5,1,5) *
-Day3.go(r,1,7,1,7) *
-Day3.go(r,2,1,2,1)
+case Enum.at(System.argv, 0) do
+  "1" -> Day3.part(1)
+  "2" -> Day3.part(2)
+  _   -> raise "No args given"
+end
 |> IO.puts

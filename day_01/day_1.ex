@@ -7,7 +7,6 @@ defmodule Day1 do
   end
 
   def part(1) do
-
     input = get_input()
 
     Enum.reduce_while(input, input, fn x, acc ->
@@ -20,7 +19,6 @@ defmodule Day1 do
   end
 
   def part(2) do
-
     input = get_input()
 
     Enum.reduce_while(input, tl(input), fn x, acc ->
